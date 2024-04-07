@@ -1,0 +1,313 @@
+body {
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 0%,
+    rgb(240, 241, 233) 50%,
+    rgb(169, 182, 169) 100%
+  );
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  border-radius: 5px;
+  height: 2.5em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 100px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0;
+  padding: 0;
+}
+
+th {
+  background-color: #afe7e9;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: cadetblue;
+  font-weight: bold;
+  padding: 20px 0;
+  z-index: 999;
+  box-shadow: 0px 3px 4px #404040;
+}
+
+#body-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#login-border {
+  width: 12em;
+  border: 1px solid;
+  border-radius: 5%;
+  border-color: rgba(243, 140, 92, 0.568);
+  padding: 20px;
+  box-shadow: 0px 5px 5px 12px rgb(187, 195, 211);
+}
+
+#form-id {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-button {
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: rgb(196, 224, 230);
+  height: 2.5em;
+  width: 45%;
+}
+
+#form-button:hover {
+  background-color: rgb(160, 214, 226);
+}
+
+#signup-button {
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: rgb(196, 224, 230);
+  height: 2.5em;
+  width: 45%;
+}
+
+#signup-form-button {
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: rgb(196, 224, 230);
+  height: 3em;
+  width: 45%;
+}
+#signup-button:hover {
+  background-color: rgb(160, 214, 226);
+}
+
+#signup-border {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 20em;
+  border: 1px solid;
+  border-radius: 5%;
+  border-color: rgba(243, 140, 92, 0.568);
+  padding: 20px;
+  box-shadow: 0px 5px 5px 12px rgb(187, 195, 211);
+}
+
+#signup-form {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  text-align: center;
+}
+
+#signup-form label,
+#signup-form input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#signup-form button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#signup-form button:hover {
+  background-color: #45a049;
+}
+
+#restaurant-show {
+  display: flex;
+  margin-right: 3em;
+  margin-left: 3em;
+}
+
+#restaurants-list {
+  flex: 1;
+}
+
+#otsikko {
+  font-size: x-large;
+  padding-top: 2.5em;
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  border-bottom: 1px solid #404040;
+}
+
+#map-container {
+  flex: 1;
+  height: 1000px;
+  width: 100%;
+  margin-top: 4.99em;
+}
+
+#menu-container {
+  margin-top: 5px;
+  text-align: center;
+  border: 3px solid rgb(103, 169, 231);
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  background-image: url('https://i.pinimg.com/736x/43/65/b8/4365b8a6189066332b7be025b3c20e27.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+#menu-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu-container li {
+  margin: 50px 0;
+  position: relative; 
+}
+
+#menu-container li::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 33%;
+  width: 33%; 
+  margin-top: 30px;
+  border-bottom: 1px solid black; 
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+  z-index: 1;
+  border: 3px solid gold;
+}
+
+#search-bar button {
+  padding: 13px;
+  margin-left: 0.4em;
+  background: #e47e7e;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#search-bar input {
+  margin-left: 3em;
+  font-size: 15px;
+}
+
+#image-id {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  margin: 75px 0 25px 0;
+}
+.profile-container {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(139, 189, 223);
+}
+
+.profile-banner {
+  width: 100%;
+  height: 500px;
+margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-field {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  border-bottom: 1px solid lightgray; /* Add border to create horizontal line */
+  padding-bottom: 10px; /* Add padding for spacing */
+  width: 100%; /* Set width to 100% to span the entire container */
+  text-align: center; /* Center-align text */
+}
+
+.edit-info-btn {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-info-btn:hover {
+  background-color: royalblue;
+}

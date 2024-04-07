@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script href="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <title>Ismetin Yksilotehtävä</title>
+  </head>
+  <body>
+    <div>
+      <div id="nav-bar">
+        <nav>
+          <ul>
+            <li class="nav-class"><a href="index.html">HOME</a></li>
+          </ul>
+          <ul id="menu-id">
+            <li class="nav-class"><a href="index.html">LIST</a></li>
+            <li class="nav-class"><a href="profile.html">PROFILE</a></li>
+            <li class="nav-class"><a href="login.html">LOG OUT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="otsikko">
+        <h1>School snacker</h1>
+      </div>
+      <div id="search-bar">
+        <form action="#home">
+          <input
+            type="text"
+            placeholder="Search restaurant by city"
+            name="search"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="restaurant-show">
+        <div id="restaurants-list">
+          <h1>Ravintolat</h1>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Distance</th>
+              <th></th>
+              <th>Favorites</th>
+            </tr>
+          </table>
+        </div>
+        <div id="map-container">
+          <div>
+            <div id="map"></div>
+          </div>
+          <div id="menu-container">
+            <h2>Food Menu</h2>
+          </div>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
+    <script src="map.js" defer></script>
+  </body>
+</html>

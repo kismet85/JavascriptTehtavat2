@@ -772,23 +772,21 @@ const restaurants = [
 
 // your code here
 
-restaurants.sort((a, b) => {
-  return a.name.localeCompare(b.name);
-});
+restaurants.sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB));
 
 const table = document.querySelector("table");
 const restList = document.getElementById("restList");
 const span = document.getElementsByClassName("close")[0];
 
-restaurants.forEach((restaurant) => {
+restaurants.forEach(({ name, address, postalCode, city, phone, company }) => {
   const row = document.createElement("tr");
   const nameCell = document.createElement("td");
 
-  nameCell.textContent = restaurant.name;
+  nameCell.textContent = name;
   row.appendChild(nameCell);
 
   const addressCell = document.createElement("td");
-  addressCell.textContent = restaurant.address;
+  addressCell.textContent = address;
 
   row.appendChild(addressCell);
 
@@ -805,36 +803,34 @@ restaurants.forEach((restaurant) => {
       restaurantContent.removeChild(restaurantContent.firstChild);
     }
 
-    const restaurantName = document.createElement("h2");
-    restaurantName.textContent = restaurant.name;
-    const restaurantAddress = document.createElement("p");
-    restaurantAddress.textContent = restaurant.address;
-    const restaurantPostalCode = document.createElement("p");
-    restaurantPostalCode.textContent = restaurant.postalCode;
-    const restaurantCity = document.createElement("p");
-    restaurantCity.textContent = restaurant.city;
-    const restaurantPhone = document.createElement("p");
-    restaurantPhone.textContent = restaurant.phone;
-    const restaurantCompany = document.createElement("p");
-    restaurantCompany.textContent = restaurant.company;
+    const createRestaurantInfo = (tag, content) => {
+      const element = document.createElement(tag);
+      element.textContent = content;
+      return element;
+    };
 
-    restaurantContent.appendChild(restaurantName);
-    restaurantContent.appendChild(restaurantAddress);
-    restaurantContent.appendChild(restaurantPostalCode);
-    restaurantContent.appendChild(restaurantCity);
-    restaurantContent.appendChild(restaurantPhone);
-    restaurantContent.appendChild(restaurantCompany);
+    const elements = [
+      { tag: "h2", content: name },
+      { tag: "p", content: address },
+      { tag: "p", content: postalCode },
+      { tag: "p", content: city },
+      { tag: "p", content: phone },
+      { tag: "p", content: company }
+    ];
 
+    elements.forEach(({ tag, content }) => {
+      const restaurantElement = createRestaurantInfo(tag, content);
+      restaurantContent.appendChild(restaurantElement);
+    });
   });
 
   table.appendChild(row);
 });
-span.onclick = function () {
+
+span.onclick = () => {
   restList.style.display = "none";
 };
 
-window.onclick = function(event) {
-  if (event.target == restList) {
-    restList.style.display = "none";
-  }
-}
+window.onclick = (event) => {
+  event.target === restList && (restList.style.display = "none");
+};
