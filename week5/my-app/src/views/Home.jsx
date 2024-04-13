@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import MediaRow from "./MediaRow";
-import SingleView from './SingleView';
+import MediaRow from "../components/MediaRow";
+import SingleView from '../components/SingleView';
 /* eslint-enable no-unused-vars */
 
 const Home = () => {

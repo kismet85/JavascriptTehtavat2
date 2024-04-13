@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 /* eslint-enable no-unused-vars */
 
-const MediaRow = ({ item, setSelectedItem }) => {
-  const handleItemClick = () => {
-    setSelectedItem(item);
-  };
-
+const MediaRow = ({ item }) => {
   return (
     <tr key={item.media_id}>
       <td>
@@ -19,7 +16,8 @@ const MediaRow = ({ item, setSelectedItem }) => {
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
       <td>
-        <button onClick={handleItemClick}>View</button>
+      <Link to="/single" state={{item}}>Show</Link>
+
       </td>
     </tr>
   );
@@ -35,7 +33,6 @@ MediaRow.propTypes = {
     filesize: PropTypes.number.isRequired,
     media_type: PropTypes.string.isRequired,
   }).isRequired,
-  setSelectedItem: PropTypes.func.isRequired,
 };
 
 export default MediaRow;
