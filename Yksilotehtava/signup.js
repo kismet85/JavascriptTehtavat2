@@ -37,14 +37,11 @@ function handleSignUp(event) {
     .then(data => {
         console.log('Sign up successful:', data);
 
-        // Extract user information from the response
         const { username, email, _id, role } = data.data;
 
-        // Display success message
         message.innerHTML = "Sign up successful";
         message.style.color = "green"; 
 
-        // Optionally, store user information in localStorage or sessionStorage for future use
         localStorage.setItem('username', username);
         localStorage.setItem('email', email);
         localStorage.setItem('userId', _id);

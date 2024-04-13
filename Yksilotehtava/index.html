@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script href="script.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,6 +15,12 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Ismetin Yksilotehtävä</title>
   </head>
   <body>
@@ -28,12 +33,14 @@
           <ul id="menu-id">
             <li class="nav-class"><a href="index.html">LIST</a></li>
             <li class="nav-class"><a href="profile.html">PROFILE</a></li>
-            <li class="nav-class"><a href="login.html">LOG OUT</a></li>
+            <li class="nav-class">
+              <a id="logout-link" href="login.html">LOG OUT</a>
+            </li>
           </ul>
         </nav>
       </div>
       <div id="otsikko">
-        <h1>School snacker</h1>
+        <img src="schoolsnackr.png" />
       </div>
       <div id="search-bar">
         <form action="#home">
@@ -43,32 +50,66 @@
             name="search"
           />
           <button type="submit">Submit</button>
+          <select id="restaurantType">
+            <option value="all">All</option>
+            <option value="Sodexo">Sodexo</option>
+            <option value="Compass Group">Compass Group</option>
+            <option value="favorites">Favorites</option>
+          </select>
         </form>
       </div>
       <div id="restaurant-show">
         <div id="restaurants-list">
           <h1>Ravintolat</h1>
-          <table>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Distance</th>
-              <th></th>
-              <th>Favorites</th>
-            </tr>
+          <table id="restaurants-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Distance</th>
+                <th></th>
+                <th>Favorites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table body will be populated dynamically -->
+            </tbody>
           </table>
         </div>
+
         <div id="map-container">
           <div>
             <div id="map"></div>
           </div>
+          <div>
+            <div id="switch-div">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+              <h3>Päivä</h3>
+            </div>
+            <div id="day-selector" style="display: none;">
+              <select id="day-select">
+                <option value="1">Maanantai</option>
+                <option value="2">Tiistai</option>
+                <option value="3">Keskiviikko</option>
+                <option value="4">Torstai</option>
+                <option value="5">Perjantai</option>
+                <option value="6">Lauantai</option>
+                <option value="7">Sunnuntai</option>
+              </select>
+            </div>
+          </div>
           <div id="menu-container">
-            <h2>Food Menu</h2>
+            <div id="menu-links">
+              <h2>Food Menu</h2>
+            </div>
           </div>
         </div>
       </div>
       <footer></footer>
     </div>
-    <script src="map.js" defer></script>
+    <script type="module" src="map.js" defer></script>
   </body>
 </html>
