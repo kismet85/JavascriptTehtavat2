@@ -33,4 +33,4 @@
   - **Ismet Ymeri**
     
 ## Sovelluksen linkki
-  [SchoolSnacker]([https://users.metropolia.fi/~stefanot/ravintola/en](https://users.metropolia.fi/~ismety/js/2024js/Yksilotehtava/index.html)
+  [SchoolSnacker](https://users.metropolia.fi/~ismety/js/2024js/Yksilotehtava/index.html)
